@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.gaoyy.animationsdemo.fragment.TwoFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal|top"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/two_circle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/green_24dp"
+            android:transitionName="two"/>
+
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/two_circle"
+            android:layout_alignTop="@+id/two_circle"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_toEndOf="@+id/two_circle"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Fragment 2"/>
+
+
+        <TextView
+            android:id="@+id/fragment2_body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/two_circle"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp"
+            android:text="Blue circle is a shared element between two fragments"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/fragment2_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment2_body1"
+            android:layout_margin="10dp"
+            android:text="Overlap"
+            android:textSize="40sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment2_title"
+            android:layout_centerHorizontal="true"
+            android:text="When true, the enter transition will start as soon as possible. When false, the enter transition will wait until the exit transition completes before starting."
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

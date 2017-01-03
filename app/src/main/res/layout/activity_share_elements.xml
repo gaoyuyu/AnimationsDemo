@@ -48,6 +48,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="27dp"
+            android:transitionName="btn"
             android:text="Share Elements with fragment"/>
 
     </RelativeLayout>
