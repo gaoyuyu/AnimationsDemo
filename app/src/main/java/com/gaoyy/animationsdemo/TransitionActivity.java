@@ -8,6 +8,7 @@ import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.transition.Fade;
+import android.transition.Slide;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -74,7 +75,7 @@ public class TransitionActivity extends AppCompatActivity implements View.OnClic
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
         {
             Fade fade = new Fade();
-            getWindow().setExitTransition(fade);
+            getWindow().setEnterTransition(fade);
         }
     }
 
@@ -121,12 +122,35 @@ public class TransitionActivity extends AppCompatActivity implements View.OnClic
                 startActivity(intent, transitionActivityOptions.toBundle());
                 break;
             case R.id.slide_code_btn:
+                intent.setClass(TransitionActivity.this,SlideActivity.class);
+                startActivity(intent, transitionActivityOptions.toBundle());
                 break;
             case R.id.slide_xml_btn:
+                intent.putExtra("type",1);
+                intent.setClass(TransitionActivity.this,SlideActivity.class);
+                startActivity(intent, transitionActivityOptions.toBundle());
                 break;
             case R.id.exit_btn:
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+                {
+                    /**
+                     * If no return transition is defined Android will use reversed enter transition
+                     * In this case, return transition will be a reversed Slide (defined in buildEnterTransition)
+                     */
+                    finishAfterTransition();
+                }
+                else
+                {
+                    finish();
+                }
                 break;
             case R.id.exit_transition_btn:
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
+                {
+                    Slide slide  = new Slide();
+                    getWindow().setReturnTransition(slide);
+                    finishAfterTransition();
+                }
                 break;
         }
     }

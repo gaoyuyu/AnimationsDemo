@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_slide_code"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_explode_code"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gaoyy.animationsdemo.SlideActivity">
+    tools:context="com.gaoyy.animationsdemo.ExplodeActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/slide_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="10dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="133dp"/>
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slide_toolbar"
+        android:layout_alignEnd="@+id/button"
+        android:layout_marginTop="120dp"
+        android:id="@+id/button2"/>
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/button2"
+        android:id="@+id/button3"/>
 
 
 </RelativeLayout>

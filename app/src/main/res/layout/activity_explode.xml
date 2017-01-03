@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
         android:textSize="25sp"
-        android:layout_below="@+id/explode_code_toolbar"
+        android:layout_below="@+id/explode_toolbar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="49dp"/>
 
