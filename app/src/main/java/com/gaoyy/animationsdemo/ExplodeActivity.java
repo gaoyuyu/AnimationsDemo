@@ -10,19 +10,22 @@ import android.transition.TransitionInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class ExplodeActivity extends AppCompatActivity
 {
-    private RelativeLayout activityExplodeCode;
-    private Toolbar explodeCodeToolbar;
-    private Button button;
     private int type;
+    private RelativeLayout activityExplodeCode;
+    private Toolbar explodeToolbar;
+    private Button button;
+    private TextView textView2;
 
     private void assignViews()
     {
         activityExplodeCode = (RelativeLayout) findViewById(R.id.activity_explode_code);
-        explodeCodeToolbar = (Toolbar) findViewById(R.id.explode_code_toolbar);
+        explodeToolbar = (Toolbar) findViewById(R.id.explode_toolbar);
         button = (Button) findViewById(R.id.button);
+        textView2 = (TextView) findViewById(R.id.textView2);
     }
 
 
@@ -30,9 +33,9 @@ public class ExplodeActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_explode_code);
+        setContentView(R.layout.activity_explode);
         assignViews();
-        type = getIntent().getIntExtra("type",0);
+        type = getIntent().getIntExtra("type", 0);
         initToolbar();
         setTransition();
     }
@@ -41,7 +44,7 @@ public class ExplodeActivity extends AppCompatActivity
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
-            if(type == 1)
+            if (type == 1)
             {
                 Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.explode);
                 transition.setDuration(500);
@@ -60,8 +63,8 @@ public class ExplodeActivity extends AppCompatActivity
 
     private void initToolbar()
     {
-        explodeCodeToolbar.setTitle("Explode Code");
-        setSupportActionBar(explodeCodeToolbar);
+        explodeToolbar.setTitle("Explode");
+        setSupportActionBar(explodeToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
     }

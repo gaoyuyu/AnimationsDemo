@@ -9,7 +9,7 @@
     tools:context="com.gaoyy.animationsdemo.ExplodeActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/explode_code_toolbar"
+        android:id="@+id/explode_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
