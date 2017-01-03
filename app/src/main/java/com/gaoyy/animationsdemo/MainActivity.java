@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements SimpleListAdapter
     {
         List<Simple> simpleList = new ArrayList<>();
         simpleList.add(new Simple(R.drawable.blue_24dp,"Transition"));
-        simpleList.add(new Simple(R.drawable.green_24dp,"Transition2"));
+        simpleList.add(new Simple(R.drawable.green_24dp,"Share Elements"));
         simpleList.add(new Simple(R.drawable.orange_24dp,"Transition3"));
         simpleList.add(new Simple(R.drawable.red_24dp,"Transition4"));
 
@@ -90,6 +90,14 @@ public class MainActivity extends AppCompatActivity implements SimpleListAdapter
                 startActivity(intent, transitionActivityOptions.toBundle());
                 break;
             case 1:
+                View circle = view.findViewById(R.id.item_circle);
+                View text = view.findViewById(R.id.item_tv);
+                final Pair<View, String>[] pairs1 = TransitionHelper.createSafeTransitionParticipants(this, true,
+                        new Pair<>(circle,"circle"),
+                        new Pair<>(text,"text"));
+                intent.setClass(MainActivity.this,ShareElementsActivity.class);
+                ActivityOptionsCompat transitionActivityOptions1 = ActivityOptionsCompat.makeSceneTransitionAnimation(this, pairs1);
+                startActivity(intent, transitionActivityOptions1.toBundle());
                 break;
             case 2:
                 break;

@@ -21,6 +21,10 @@
         </activity>
         <activity android:name=".SlideActivity">
         </activity>
+        <activity android:name=".ShareElementsActivity">
+        </activity>
+        <activity android:name=".ShareElementsWithFragActivity">
+        </activity>
     </application>
 
 </manifest>
