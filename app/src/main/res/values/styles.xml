@@ -9,4 +9,8 @@
         <item name="android:windowBackground">@color/light_grey</item>
     </style>
 
+    <style name="AppTheme.Red" parent="AppTheme">
+        <item name="android:windowBackground">@color/colorAccent</item>
+    </style>
+
 </resources>

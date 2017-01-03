@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements SimpleListAdapter
             Slide slideTransition = new Slide();
             slideTransition.setSlideEdge(Gravity.LEFT);
             slideTransition.setDuration(500);
+            //Re-enter(重新进入)动画在重新回到该Activity时执行
             getWindow().setReenterTransition(slideTransition);
             getWindow().setExitTransition(slideTransition);
         }

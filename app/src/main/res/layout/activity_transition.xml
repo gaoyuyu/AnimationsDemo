@@ -19,10 +19,72 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="We can modify previous Fade sample and define a ReturnTransition for TransitionActivity, in this case, a Slide transition. This way, when returning from B to A, instead of seeing a
-        Fade out (reversed Enter Transition) we will see a Slide out transition"/>
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:text="This activity defines a Explode Enter Transition programmatically. Transitions can be defined either on code or on xml resource files"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/explode_code_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView"
+            android:layout_below="@+id/textView"
+            android:layout_marginTop="13dp"
+            android:text="explode(code)"/>
+
+        <Button
+            android:id="@+id/slide_code_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/explode_code_btn"
+            android:layout_marginEnd="31dp"
+            android:text="slide(code)"/>
+
+        <Button
+            android:id="@+id/slide_xml_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/slide_code_btn"
+            android:layout_below="@+id/slide_code_btn"
+            android:text="slide(xml)"/>
+
+        <Button
+            android:id="@+id/exit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="exit"/>
+
+        <Button
+            android:id="@+id/exit_transition_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/exit_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="39dp"
+            android:text="exit(overridng return transition)"/>
+
+        <Button
+            android:id="@+id/explode_xml_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="explode(xml)"
+            android:layout_below="@+id/explode_code_btn"
+            android:layout_alignStart="@+id/explode_code_btn"/>
+    </RelativeLayout>
+
 
 </LinearLayout>
