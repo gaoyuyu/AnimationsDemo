@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements SimpleListAdapter
     @Override
     public void onItemClick(View view, int position)
     {
+        View circle = view.findViewById(R.id.item_circle);
+        View text = view.findViewById(R.id.item_tv);
         Intent intent = new Intent();
         switch (position)
         {
@@ -90,8 +92,6 @@ public class MainActivity extends AppCompatActivity implements SimpleListAdapter
                 startActivity(intent, transitionActivityOptions.toBundle());
                 break;
             case 1:
-                View circle = view.findViewById(R.id.item_circle);
-                View text = view.findViewById(R.id.item_tv);
                 final Pair<View, String>[] pairs1 = TransitionHelper.createSafeTransitionParticipants(this, true,
                         new Pair<>(circle,"circle"),
                         new Pair<>(text,"text"));
@@ -102,6 +102,12 @@ public class MainActivity extends AppCompatActivity implements SimpleListAdapter
             case 2:
                 break;
             case 3:
+                final Pair<View, String>[] pairs2 = TransitionHelper.createSafeTransitionParticipants(this, true,
+                        new Pair<>(circle,"circle"));
+                intent.setClass(MainActivity.this,RevealActivity.class);
+                ActivityOptionsCompat transitionActivityOptions2 = ActivityOptionsCompat.makeSceneTransitionAnimation(this, pairs2);
+                startActivity(intent, transitionActivityOptions2.toBundle());
+
                 break;
         }
     }
